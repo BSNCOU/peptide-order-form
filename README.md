@@ -1,11 +1,11 @@
 # peptide-order-form
 moble peptide order form
-[index.html.html](https://github.com/user-attachments/files/23938419/index.html.html)
+[index.html.html](https://github.com/user-attachments/files/23938952/index.html.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Peptide Order Form</title>
     <style>
         :root {
@@ -226,9 +226,74 @@ moble peptide order form
         }
         
         @media (max-width: 600px) {
-            h1 { font-size: 24px; }
-            .price-display { grid-template-columns: 1fr; }
-            header { padding: 25px 20px; }
+            body {
+                padding: 10px;
+            }
+            
+            h1 { 
+                font-size: 22px; 
+            }
+            
+            .subtitle {
+                font-size: 13px;
+            }
+            
+            header {
+                padding: 20px 18px;
+            }
+            
+            .order-section {
+                padding: 18px;
+            }
+            
+            .order-item {
+                padding: 15px;
+            }
+            
+            .price-display { 
+                grid-template-columns: 1fr; 
+                gap: 10px;
+            }
+            
+            .price-value {
+                font-size: 20px;
+            }
+            
+            .totals {
+                padding: 20px;
+            }
+            
+            .totals h2 {
+                font-size: 18px;
+            }
+            
+            .total-row {
+                font-size: 14px;
+                padding: 12px;
+            }
+            
+            .total-row.grand {
+                font-size: 16px;
+            }
+            
+            label {
+                font-size: 13px;
+            }
+            
+            select, input {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+            
+            .add-btn, .remove-btn {
+                font-size: 14px;
+                padding: 12px 18px;
+            }
+            
+            #orderTextArea {
+                font-size: 12px;
+                min-height: 250px;
+            }
         }
     </style>
 </head>
