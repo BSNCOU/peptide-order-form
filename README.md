@@ -1,6 +1,6 @@
 # peptide-order-form
 moble peptide order form
-[index.html.html](https://github.com/user-attachments/files/23939200/index.html.html)
+[index.html.html](https://github.com/user-attachments/files/23939332/index.html.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@ moble peptide order form
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--light) 0%, #e0f2f7 100%);
             min-height: 100vh;
-            padding: 15px;
+            padding: 10px;
         }
         
         .container {
@@ -40,37 +40,37 @@ moble peptide order form
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 20px 20px;
-            border-radius: 16px;
-            margin-bottom: 20px;
+            padding: 15px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
         }
         
         h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 5px;
             font-weight: 700;
         }
         
         .subtitle {
             opacity: 0.9;
-            font-size: 15px;
+            font-size: 12px;
         }
         
         .order-section {
             background: white;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
             box-shadow: var(--shadow);
         }
         
         .order-item {
             background: #fafafa;
             border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
             transition: all 0.3s ease;
         }
         
@@ -83,22 +83,22 @@ moble peptide order form
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .item-number {
             font-weight: 700;
             color: var(--primary);
-            font-size: 16px;
+            font-size: 13px;
         }
         
         .remove-btn {
             background: #ff4757;
             color: white;
             border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
-            font-size: 14px;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.2s;
@@ -112,20 +112,20 @@ moble peptide order form
         label {
             display: block;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--dark);
-            font-size: 14px;
+            font-size: 12px;
         }
         
         select, input {
             width: 100%;
-            padding: 12px 14px;
+            padding: 10px 10px;
             border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 15px;
+            border-radius: 8px;
+            font-size: 14px;
             background: white;
             transition: all 0.3s;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         select:focus, input:focus {
@@ -137,13 +137,13 @@ moble peptide order form
         .price-display {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 10px;
         }
         
         .price-box {
-            padding: 15px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 8px;
             text-align: center;
         }
         
@@ -158,15 +158,15 @@ moble peptide order form
         }
         
         .price-label {
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
             color: #666;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         
         .price-value {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--dark);
         }
@@ -175,13 +175,13 @@ moble peptide order form
             background: var(--secondary);
             color: white;
             border: none;
-            border-radius: 12px;
-            padding: 15px 25px;
-            font-size: 16px;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(21, 152, 149, 0.3);
         }
@@ -195,104 +195,56 @@ moble peptide order form
         .totals {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 25px;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 15px;
             box-shadow: var(--shadow);
         }
         
         .totals h2 {
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 15px;
             text-align: center;
         }
         
         .total-row {
             display: flex;
             justify-content: space-between;
-            padding: 15px;
+            padding: 10px;
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            margin-bottom: 12px;
-            font-size: 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
             font-weight: 600;
         }
         
         .total-row.grand {
             background: rgba(255,255,255,0.2);
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 800;
             border: 2px solid rgba(255,255,255,0.3);
         }
         
         @media (max-width: 600px) {
             body {
-                padding: 10px;
-            }
-            
-            h1 { 
-                font-size: 22px; 
-            }
-            
-            .subtitle {
-                font-size: 13px;
-            }
-            
-            header {
-                padding: 20px 18px;
-            }
-            
-            .order-section {
-                padding: 18px;
-            }
-            
-            .order-item {
-                padding: 15px;
+                padding: 8px;
             }
             
             .price-display { 
                 grid-template-columns: 1fr; 
-                gap: 10px;
+                gap: 8px;
             }
             
             .price-value {
-                font-size: 20px;
-            }
-            
-            .totals {
-                padding: 20px;
-            }
-            
-            .totals h2 {
-                font-size: 18px;
-            }
-            
-            .total-row {
-                font-size: 14px;
-                padding: 12px;
-            }
-            
-            .total-row.grand {
                 font-size: 16px;
             }
             
-            label {
-                font-size: 13px;
+            h1 {
+                font-size: 18px;
             }
             
-            select, input {
-                font-size: 14px;
-                padding: 10px 12px;
-            }
-            
-            .add-btn, .remove-btn {
-                font-size: 14px;
-                padding: 12px 18px;
-            }
-            
-            #orderTextArea {
-                font-size: 12px;
-                min-height: 250px;
+            .subtitle {
+                font-size: 11px;
             }
         }
     </style>
