@@ -370,6 +370,16 @@
 
         let itemCounter = 0;
 
+        function renumberItems() {
+            const items = document.querySelectorAll('.order-item');
+            items.forEach((item, index) => {
+                const itemNumber = item.querySelector('.item-number');
+                if (itemNumber) {
+                    itemNumber.textContent = `Item #${index + 1}`;
+                }
+            });
+        }
+
         function addOrderItem() {
             itemCounter++;
             const itemDiv = document.createElement('div');
@@ -404,12 +414,14 @@
             `;
             
             document.getElementById('orderItems').appendChild(itemDiv);
+            renumberItems();
         }
 
         function removeItem(itemId) {
             const item = document.getElementById(`item-${itemId}`);
             if (item) {
                 item.remove();
+                renumberItems();
                 updateTotals();
             }
         }
@@ -561,4 +573,3 @@
     </script>
 </body>
 </html>
-
