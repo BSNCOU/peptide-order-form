@@ -1,4 +1,3 @@
-[index.html.html](https://github.com/user-attachments/files/23939480/index.html.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -421,14 +420,12 @@
             const product = products.find(p => p.code === productCode);
             
             if (product) {
-                // If 1-9 bottles, use single bottle price. If 10+, use box price per bottle
                 let salesPricePerBottle, publicPricePerBottle;
                 
                 if (quantity < 10) {
                     salesPricePerBottle = product.sales1;
                     publicPricePerBottle = product.public1;
                 } else {
-                    // Box price is for 10 bottles, so divide by 10 to get per-bottle price
                     salesPricePerBottle = product.sales2 / 10;
                     publicPricePerBottle = product.public2 / 10;
                 }
@@ -469,7 +466,6 @@
             let salesTotal = 0;
             let publicTotal = 0;
             
-            // Collect all order items
             document.querySelectorAll('.order-item').forEach(item => {
                 const itemId = item.id.split('-')[1];
                 const productSelect = document.getElementById(`product-${itemId}`);
@@ -502,7 +498,6 @@
                 return;
             }
             
-            // Generate formatted text
             const date = new Date().toLocaleDateString();
             let orderText = `═══════════════════════════════════════\n`;
             orderText += `         PEPTIDE ORDER SUMMARY\n`;
@@ -530,37 +525,30 @@
             orderText += `Potential Profit: $${profit.toFixed(2)}\n`;
             orderText += `═══════════════════════════════════════\n`;
             
-            // Display the text
             document.getElementById('orderTextArea').value = orderText;
             document.getElementById('orderTextSection').style.display = 'block';
             
-            // Scroll to the text area
             document.getElementById('orderTextSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         function copyOrderText() {
             const textArea = document.getElementById('orderTextArea');
             textArea.select();
-            textArea.setSelectionRange(0, 99999); // For mobile devices
+            textArea.setSelectionRange(0, 99999);
             
-            // Copy to clipboard
             navigator.clipboard.writeText(textArea.value).then(() => {
-                // Show confirmation
                 const confirm = document.getElementById('copyConfirm');
                 confirm.style.display = 'block';
                 
-                // Hide confirmation after 2 seconds
                 setTimeout(() => {
                     confirm.style.display = 'none';
                 }, 2000);
             }).catch(err => {
-                // Fallback for older browsers
                 document.execCommand('copy');
                 alert('Order summary copied to clipboard!');
             });
         }
 
-        // Add first item on load
         addOrderItem();
     </script>
 </body>
