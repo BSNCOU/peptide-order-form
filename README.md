@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=no">
     <title>Peptide Order Form</title>
     <style>
         :root {
@@ -26,48 +26,48 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--light) 0%, #e0f2f7 100%);
             min-height: 100vh;
-            padding: 10px;
+            padding: 8px;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto;
         }
         
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 15px 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            padding: 12px 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
             box-shadow: var(--shadow);
         }
         
         h1 {
-            font-size: 20px;
-            margin-bottom: 5px;
+            font-size: 18px;
+            margin-bottom: 4px;
             font-weight: 700;
         }
         
         .subtitle {
             opacity: 0.9;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .order-section {
             background: white;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
             box-shadow: var(--shadow);
         }
         
         .order-item {
             background: #fafafa;
             border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 12px;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
             transition: all 0.3s ease;
         }
         
@@ -80,22 +80,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .item-number {
             font-weight: 700;
             color: var(--primary);
-            font-size: 13px;
+            font-size: 12px;
         }
         
         .remove-btn {
             background: #ff4757;
             color: white;
             border: none;
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-size: 12px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 11px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.2s;
@@ -109,20 +109,20 @@
         label {
             display: block;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             color: var(--dark);
-            font-size: 12px;
+            font-size: 11px;
         }
         
         select, input {
             width: 100%;
-            padding: 10px 10px;
+            padding: 8px 8px;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 13px;
             background: white;
             transition: all 0.3s;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         select:focus, input:focus {
@@ -134,13 +134,13 @@
         .price-display {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 8px;
         }
         
         .price-box {
-            padding: 10px;
-            border-radius: 8px;
+            padding: 8px;
+            border-radius: 6px;
             text-align: center;
         }
         
@@ -155,15 +155,15 @@
         }
         
         .price-label {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
             text-transform: uppercase;
             color: #666;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         
         .price-value {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             color: var(--dark);
         }
@@ -172,13 +172,13 @@
             background: var(--secondary);
             color: white;
             border: none;
-            border-radius: 10px;
-            padding: 12px 20px;
-            font-size: 14px;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(21, 152, 149, 0.3);
         }
@@ -192,56 +192,64 @@
         .totals {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
-            border-radius: 12px;
-            padding: 18px;
-            margin-top: 15px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 10px;
             box-shadow: var(--shadow);
         }
         
         .totals h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 10px;
             text-align: center;
         }
         
         .total-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
+            padding: 8px;
             background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            margin-bottom: 8px;
-            font-size: 13px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 12px;
             font-weight: 600;
         }
         
         .total-row.grand {
             background: rgba(255,255,255,0.2);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
             border: 2px solid rgba(255,255,255,0.3);
         }
         
         @media (max-width: 600px) {
             body {
-                padding: 8px;
+                padding: 5px;
             }
             
             .price-display { 
                 grid-template-columns: 1fr; 
-                gap: 8px;
+                gap: 6px;
             }
             
             .price-value {
-                font-size: 16px;
+                font-size: 14px;
             }
             
             h1 {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .subtitle {
+                font-size: 10px;
+            }
+            
+            .total-row {
                 font-size: 11px;
+            }
+            
+            .total-row.grand {
+                font-size: 13px;
             }
         }
     </style>
@@ -553,3 +561,4 @@
     </script>
 </body>
 </html>
+
