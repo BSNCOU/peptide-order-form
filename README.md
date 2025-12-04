@@ -1,6 +1,6 @@
 # peptide-order-form
 moble peptide order form
-[index.html.html](https://github.com/user-attachments/files/23938952/index.html.html)
+[index.html.html](https://github.com/user-attachments/files/23939200/index.html.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@ moble peptide order form
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--light) 0%, #e0f2f7 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
         
         .container {
@@ -40,9 +40,9 @@ moble peptide order form
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 30px 25px;
+            padding: 20px 20px;
             border-radius: 16px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: var(--shadow);
         }
         
@@ -60,8 +60,8 @@ moble peptide order form
         .order-section {
             background: white;
             border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
         }
         
