@@ -411,7 +411,7 @@ DSIP promotes deep, restorative sleep and has stress-protective and neuromodulat
 
 ### Available Specifications
 - **DS5**: 5mg/10vials
-- **DS15**: 15mg/10vials (actually DS10 based on product list)
+- **DS15**: 10mg/10vials (note: product code is DS15 for the 10mg version)
 
 ### Reconstitution
 - Reconstitute with 2ml BAC water
