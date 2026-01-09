@@ -1162,8 +1162,6 @@
                 priceList += `  $${p.public1} | $${p.public2}\n\n`;
             });
 
-            priceList += `Contact for orders and bulk pricing\n`;
-
             document.getElementById('orderTextArea').value = priceList;
             document.getElementById('orderTextSection').style.display = 'block';
             document.getElementById('orderTextSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
