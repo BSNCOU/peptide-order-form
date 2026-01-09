@@ -1154,23 +1154,15 @@
             }
 
             const date = new Date().toLocaleDateString();
-            let priceList = `===================================\n`;
-            priceList += `        PEPTIDE PRICE LIST\n`;
-            priceList += `===================================\n`;
+            let priceList = `PEPTIDE PRICE LIST\n`;
             priceList += `Updated: ${date}\n\n`;
-
-            priceList += `CODE - PRODUCT (SPEC)\n`;
-            priceList += `  1 Bottle | Box of 10\n`;
-            priceList += `-----------------------------------\n\n`;
 
             products.forEach(p => {
                 priceList += `${p.code} - ${p.name} (${p.spec})\n`;
                 priceList += `  $${p.public1} | $${p.public2}\n\n`;
             });
 
-            priceList += `===================================\n`;
             priceList += `Contact for orders and bulk pricing\n`;
-            priceList += `===================================\n`;
 
             document.getElementById('orderTextArea').value = priceList;
             document.getElementById('orderTextSection').style.display = 'block';
