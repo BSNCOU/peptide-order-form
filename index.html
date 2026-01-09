@@ -539,7 +539,8 @@
                 <p class="subtitle">Dealer = 20% off Public</p>
                 <p class="sync-status" id="syncStatus">Connecting...</p>
             </div>
-            <button class="manage-btn" onclick="openModal()">⚙️ Manage Products</button>
+            <button class="manage-btn" onclick="openModal()">⚙️ Manage</button>
+            <button class="manage-btn" onclick="generatePriceList()" style="margin-left: 5px;">📋 Price List</button>
         </header>
 
         <div class="order-section">
@@ -1076,19 +1077,19 @@
             const finalDealerTotal = dealerTotal - discountAmount;
 
             const date = new Date().toLocaleDateString();
-            let orderText = `═══════════════════════════════════════\n`;
+            let orderText = `===================================\n`;
 
             if (orderMode === 'dealer') {
-                orderText += `         DEALER ORDER SUMMARY\n`;
+                orderText += `      DEALER ORDER SUMMARY\n`;
             } else {
-                orderText += `         PEPTIDE ORDER SUMMARY\n`;
+                orderText += `      PEPTIDE ORDER SUMMARY\n`;
             }
 
-            orderText += `═══════════════════════════════════════\n`;
+            orderText += `===================================\n`;
             orderText += `Date: ${date}\n\n`;
 
             orderText += `ITEMS ORDERED:\n`;
-            orderText += `─────────────────────────────────────\n`;
+            orderText += `-----------------------------------\n`;
 
             orderItems.forEach((item, index) => {
                 orderText += `\n${index + 1}. ${item.code} - ${item.name}\n`;
@@ -1103,9 +1104,9 @@
                 }
             });
 
-            orderText += `\n═══════════════════════════════════════\n`;
+            orderText += `\n===================================\n`;
             orderText += `TOTALS:\n`;
-            orderText += `─────────────────────────────────────\n`;
+            orderText += `-----------------------------------\n`;
 
             if (orderMode === 'dealer') {
                 orderText += `Public Total:    $${publicTotal.toFixed(2)}\n`;
@@ -1120,7 +1121,7 @@
                 orderText += `Order Total:     $${publicTotal.toFixed(2)}\n`;
             }
 
-            orderText += `═══════════════════════════════════════\n`;
+            orderText += `===================================\n`;
 
             document.getElementById('orderTextArea').value = orderText;
             document.getElementById('orderTextSection').style.display = 'block';
@@ -1143,6 +1144,37 @@
                 document.execCommand('copy');
                 alert('Order summary copied to clipboard!');
             });
+        }
+
+        // Generate price list
+        function generatePriceList() {
+            if (products.length === 0) {
+                alert('No products loaded yet. Please wait for sync.');
+                return;
+            }
+
+            const date = new Date().toLocaleDateString();
+            let priceList = `===================================\n`;
+            priceList += `        PEPTIDE PRICE LIST\n`;
+            priceList += `===================================\n`;
+            priceList += `Updated: ${date}\n\n`;
+
+            priceList += `CODE - PRODUCT (SPEC)\n`;
+            priceList += `  1 Bottle | Box of 10\n`;
+            priceList += `-----------------------------------\n\n`;
+
+            products.forEach(p => {
+                priceList += `${p.code} - ${p.name} (${p.spec})\n`;
+                priceList += `  $${p.public1} | $${p.public2}\n\n`;
+            });
+
+            priceList += `===================================\n`;
+            priceList += `Contact for orders and bulk pricing\n`;
+            priceList += `===================================\n`;
+
+            document.getElementById('orderTextArea').value = priceList;
+            document.getElementById('orderTextSection').style.display = 'block';
+            document.getElementById('orderTextSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // Initialize
