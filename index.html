@@ -1153,16 +1153,14 @@
                 return;
             }
 
-            const date = new Date().toLocaleDateString();
-            let priceList = `PEPTIDE PRICE LIST\n`;
-            priceList += `Updated: ${date}\n\n`;
+            let priceList = '';
 
             products.forEach(p => {
                 priceList += `${p.code} - ${p.name} (${p.spec})\n`;
-                priceList += `  $${p.public1} | $${p.public2}\n\n`;
+                priceList += `$${p.public1} | $${p.public2}\n\n`;
             });
 
-            document.getElementById('orderTextArea').value = priceList;
+            document.getElementById('orderTextArea').value = priceList.trim();
             document.getElementById('orderTextSection').style.display = 'block';
             document.getElementById('orderTextSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
